@@ -6,8 +6,8 @@ function App() {
 
   useEffect(()=>{
     console.log("UseEffect Used");
-  });
-
+  }, []);
+  
   function changeHandler(event){
     console.log(text);
     setText(event.target.value);
