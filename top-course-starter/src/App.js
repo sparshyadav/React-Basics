@@ -16,7 +16,8 @@ const App = () => {
     try {
       let response = await fetch(apiUrl);
       let data = await response.json();
-      setCourses(data);
+      setCourses(data.data);
+      console.log(courses);
     }
     catch (error) {
       toast.error("Problem with Network");
@@ -26,13 +27,13 @@ const App = () => {
 
   useEffect(() => {
     fetchData();
-  })
+  }, [])
 
   return (
     <div>
       <Navbar />
       <Filter filterData={filterData} />
-      {loading ? (<Spinner />) : (<Cards />)}
+      {loading ? (<Spinner />) : (<Cards courses={courses} />)}
     </div>
   )
 };
