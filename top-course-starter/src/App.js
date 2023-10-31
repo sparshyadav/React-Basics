@@ -3,14 +3,16 @@ import { apiUrl, filterData } from "./data";
 import Navbar from "./components/Navbar";
 import Cards from "./components/Cards";
 import Filter from "./components/Filter";
-// import { toast } from "react-toastify/dist/components";
+import Spinner from "./components/Spinner";
 import { toast } from "react-toastify";
 
 const App = () => {
 
   const [courses, setCourses] = useState(null);
+  const [loading, setLoading]=useState(true);
 
   async function fetchData() {
+    setLoading(true);
     try {
       let response = await fetch(apiUrl);
       let data = await response.json();
@@ -19,6 +21,7 @@ const App = () => {
     catch (error) {
       toast.error("Problem with Network");
     }
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -29,7 +32,7 @@ const App = () => {
     <div>
       <Navbar />
       <Filter filterData={filterData} />
-      <Cards />
+      {loading ? (<Spinner />) : (<Cards />)}
     </div>
   )
 };
