@@ -10,18 +10,20 @@ const App = () => {
 
   const [courses, setCourses]=useState(null);
 
-  useEffect(()=>{
-    const fetchData=async()=>{
-      try{
-        const res=await fetch(apiUrl);
-        const data=await res.json();
-        setCourses(data.data);
-      }
-      catch(error){
-        toast.error("Something Went Wrong");
-      }
+  async function fetchData(){
+    try{
+      let response=await fetch(apiUrl);
+      let data=await response.json();
+      setCourses(data);
     }
-  }, [])
+    catch(error){
+      toast.error("Problem with Network");
+    }
+  }
+
+  useEffect(()=>{
+    fetchData();
+  })
 
   return (
     <div>
