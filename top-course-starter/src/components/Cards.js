@@ -14,9 +14,9 @@ export default function Cards({ courses }) {
 
     return (
         <div>
-            {!courses 
-            ? (<p>No Data Found</p>)
-            : (
+            {!courses
+                ? (<p>No Data Found</p>)
+                : (
                     getCourses().map((course) => {
                         return (<Card key={course.id} course={course} />)
                     })
