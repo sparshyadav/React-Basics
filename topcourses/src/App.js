@@ -4,9 +4,13 @@ import React, {useEffect, useState} from 'react';
 function App() {
   const [text, setText]=useState('');
 
+  // useEffect(()=>{
+  //   console.log("UseEffect Used");
+  // }, []);
+
   useEffect(()=>{
-    console.log("UseEffect Used");
-  }, []);
+    console.log("Change Observed");
+  }, [text]);
   
   function changeHandler(event){
     console.log(text);
