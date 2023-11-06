@@ -5,11 +5,12 @@ import Cards from "./components/Cards";
 import Filter from "./components/Filter";
 import Spinner from "./components/Spinner";
 import { toast } from "react-toastify";
+import "./App.css";
 
 const App = () => {
 
   const [courses, setCourses] = useState(null);
-  const [loading, setLoading]=useState(true);
+  const [loading, setLoading] = useState(true);
 
   async function fetchData() {
     setLoading(true);
@@ -30,12 +31,15 @@ const App = () => {
   }, [])
 
   return (
-    <div>
+    <div className="app">
       <Navbar />
+
       <Filter filterData={filterData} />
+
       {loading ? (<Spinner />) : (<Cards courses={courses} />)}
+
     </div>
   )
 };
 
-export default App;
+      export default App;

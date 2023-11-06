@@ -1,0 +1,17 @@
+.container{
+    /* height: 75px; */
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    /* border: 1px solid black; */
+    margin-top: 35px;
+}
+button{
+    /* height: 15px; */
+    padding: 10px;
+    border: 2px solid black;
+    color: white;
+    background-color: blueviolet;
+}

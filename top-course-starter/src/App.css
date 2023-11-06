@@ -1,0 +1,22 @@
+.app{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.body{
+    /* height: auto; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid black;
+}
+.filter-data{
+    margin: 15px;
+    height: 50px;
+    background-color: yellow;
+}
+.actual-data{
+    width: 80%;
+}

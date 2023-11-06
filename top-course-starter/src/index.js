@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <div>
+    <div className="wrapper">
       <App />
       <ToastContainer />
     </div>
