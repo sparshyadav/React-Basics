@@ -1,9 +1,9 @@
 import React from 'react'
-import {FaQuoteLeft, FaQuoteRight} from "react-icons/fa"
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"
 import "./Card.css";
 
 const Card = (props) => {
-    let review=props.review;
+  let review = props.review;
   return (
     <div className='card-container'>
       <div>
@@ -29,22 +29,6 @@ const Card = (props) => {
       <div>
         <FaQuoteRight />
       </div>
-
-      <div>
-        <button>
-            -
-        </button>
-        <button>
-            +
-        </button>
-      </div>
-      
-      <div>
-        <button>
-            Surprise Me
-        </button>
-      </div>
-
     </div>
   )
 }
