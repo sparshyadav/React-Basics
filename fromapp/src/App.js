@@ -41,7 +41,7 @@ function App() {
           <option value="Thar">Thar</option>
         </select>
         <label htmlFor='favCar'> Tell Me Your Favourite Car</label>
-
+        <button>Submit</button>
       </form>
     </div>
   );
