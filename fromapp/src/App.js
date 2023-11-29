@@ -18,12 +18,18 @@ function App() {
     // console.log(formData.firstName);
     // console.log(formData.lastName);
     // console.log(formData.email);
+    // console.log(formData);
+  }
+
+  function submitHandler(event){
+    event.preventDefault();
+    console.log("Finally printing the Entire Form");
     console.log(formData);
   }
 
   return (
     <div className="App">
-      <form>
+      <form onSubmit={submitHandler}>
         <input type='text' placeholder='FirstName' name='firstName' onChange={changeHandler} value={formData.firstName} />
         <input type='text' placeholder='LastName' name='lastName' onChange={changeHandler} value={formData.lastName} />
         <input type='email' placeholder='Email' name='email' onChange={changeHandler} value={formData.email} />
