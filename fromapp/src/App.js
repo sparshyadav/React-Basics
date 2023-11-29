@@ -3,16 +3,16 @@ import './App.css';
 import React, { useState } from 'react';
 
 function App() {
-  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comments: "", isVisible: true, mode:"" });
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comments: "", isVisible: true, mode: "" });
 
 
   function changeHandler(event) {
-    const {name, value, checked, type}=event.target;
+    const { name, value, checked, type } = event.target;
     setFormData(prevFormData => {
       return {
         ...prevFormData,
-        [name]:type==='checkbox'?checked:value
-        
+        [name]: type === 'checkbox' ? checked : value
+
       }
     });
     // console.log(formData.firstName);
