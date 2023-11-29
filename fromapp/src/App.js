@@ -15,13 +15,9 @@ function App() {
 
       }
     });
-    // console.log(formData.firstName);
-    // console.log(formData.lastName);
-    // console.log(formData.email);
-    // console.log(formData);
   }
 
-  function submitHandler(event){
+  function submitHandler(event) {
     event.preventDefault();
     console.log("Finally printing the Entire Form");
     console.log(formData);
