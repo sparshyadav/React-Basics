@@ -3,7 +3,7 @@ import './App.css';
 import React, { useState } from 'react';
 
 function App() {
-  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comments: "", isVisible: true, mode: "" });
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comments: "", isVisible: true, mode: "", favCar: "" });
 
 
   function changeHandler(event) {
@@ -30,10 +30,18 @@ function App() {
         <textarea placeholder='Enter Your Comments' name='comments' onChange={changeHandler} value={formData.comments} />
         <input type='checkbox' id='isVisible' onChange={changeHandler} checked={formData.isVisible} name='isVisible' />
         <label htmlFor='isVisible'>Am i Visible</label>
-        <input type='radio' onChange={changeHandler} name='mode' value='Online Mode' id='Online Mode' />
+        <input type='radio' onChange={changeHandler} name='mode' value='Online Mode' id='Online Mode' checked={formData.mode === "Online Mode"} />
         <label htmlFor='Online Mode'>Online Mode</label>
-        <input type='radio' onChange={changeHandler} name='mode' value='Offline Mode' id='Offline Mode' />
-        <label htmlFor='Online Mode'>Offline Mode</label>
+        <input type='radio' onChange={changeHandler} name='mode' value='Offline Mode' id='Offline Mode' checked={formData.mode === "Offline Mode"} />
+        <label htmlFor='Online Mode'>Offline Mode</label> <br></br>
+        <select name='favCar' id='favCar' value={formData.favCar} onChange={changeHandler}>
+          <option value="Scorpio">Scorpio</option>
+          <option value="Harrier">Harrier</option>
+          <option value="Fortuner">Fortuner</option>
+          <option value="Thar">Thar</option>
+        </select>
+        <label htmlFor='favCar'> Tell Me Your Favourite Car</label>
+        
       </form>
     </div>
   );
