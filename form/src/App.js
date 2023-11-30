@@ -40,6 +40,9 @@ export default function App() {
         <label htmlFor='state'>State</label> <br></br>
         <input type='state' name='state' id='state' placeholder='Enter Your State' value={formData.state} onChange={changeHandler} className='outline' /> <br></br> <br></br>
 
+        {/* Address */}
+        <label htmlFor='address'>Address</label> <br></br>
+        <input type='address' name='address' id='address' placeholder='Enter Your Address' value={formData.address} onChange={changeHandler} className='outline' /> <br></br> <br></br>
       </form>
     </div>
   )
