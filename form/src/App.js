@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
 export default function App() {
-  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", country: "India", state: "" });
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", country: "India", state: "", postalCode: "", address: "", comments: false, candidate: false, offers: false });
 
   function changeHandler(event) {
     const { name, value, checked, type } = event.target;
 
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
   };
 
   return (
@@ -43,6 +43,30 @@ export default function App() {
         {/* Address */}
         <label htmlFor='address'>Address</label> <br></br>
         <input type='address' name='address' id='address' placeholder='Enter Your Address' value={formData.address} onChange={changeHandler} className='outline' /> <br></br> <br></br>
+
+        {/* Postal Code */}
+        <label htmlFor='postalCode'>Postal Code</label> <br></br>
+        <input type='postalCode' name='postalCode' id='postalCode' placeholder='Enter Your ZIP Code' value={formData.postalCode} onChange={changeHandler} className='outline' /> <br></br> <br></br>
+
+        <fieldset>
+          <legend>By Email</legend>
+          {/* Comments */}
+          <input type='checkbox' id='comments' name='comments' checked={formData.comments} onChange={changeHandler} />
+          <label htmlFor='comments'>Comments</label> <br></br>
+          <p>Get Notified when someone post a comment on the posting.</p>
+
+          {/* Candidate */}
+          <input type='checkbox' id='candidate' name='candidate' checked={formData.candidate} onChange={changeHandler} />
+          <label htmlFor='candidate'>Comments</label> <br></br>
+          <p>Get Notified when someone new posts for new role.</p>
+
+          {/* Offers */}
+          <input type='checkbox' id='offers' name='offers' checked={formData.offers} onChange={changeHandler} />
+          <label htmlFor='offers'>Comments</label> <br></br>
+          <p>Get Notified whenever there is a offer going on.</p>
+        </fieldset>
+
+        <button>Save</button>
       </form>
     </div>
   )
