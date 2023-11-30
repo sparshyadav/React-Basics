@@ -9,9 +9,16 @@ export default function App() {
     setFormData((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
   };
 
+  function submitHandler(event) {
+    event.preventDefault();
+
+    console.log("Finally Printing the Form Data");
+    console.log(formData);
+  }
+
   return (
     <div className='flex flex-col items-center m-2'>
-      <form>
+      <form onSubmit={submitHandler}>
         {/* First Name */}
         <label htmlFor='firstName'>First Name</label> <br></br>
         <input type='text' name='firstName' id='firstName' placeholder='Enter Your First Name' value={formData.firstName} onChange={changeHandler} className='outline' /> <br></br> <br></br>
