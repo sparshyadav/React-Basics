@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 export default function App() {
-  const [formData, setFormData] = useState({ firstName: "", lastName: "", email:"" });
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "" });
 
   function changeHandler(event) {
     const { name, value, checked, type } = event.target;
@@ -24,7 +24,7 @@ export default function App() {
         <label htmlFor='email'>Email</label> <br></br>
         <input type='email' name='email' id='email' placeholder='Enter Your Email' value={formData.email} onChange={changeHandler} /> <br></br> <br></br>
 
-        
+
       </form>
     </div>
   )
