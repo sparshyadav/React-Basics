@@ -2,7 +2,7 @@ import Home from './components/Home.js';
 import About from './components/About.js';
 import Product from './components/Product.js';
 import Support from './components/Support.js';
-import { Link, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -10,10 +10,15 @@ function App() {
     <div className="App">
       <nav>
         <ul>
-          <Link to={'/'}>Home</Link>
+          {/* <Link to={'/'}>Home</Link>
           <Link to={'/about'}>About</Link>
           <Link to={'/support'}>Support</Link>
-          <Link to={'product'}>Product</Link>
+          <Link to={'product'}>Product</Link> */}
+
+          <NavLink to={'/'}>Home</NavLink>
+          <NavLink to={'/about'}>About</NavLink>
+          <NavLink to={'/support'}>Support</NavLink>
+          <NavLink to={'product'}>Product</NavLink>
         </ul>
       </nav>
 
