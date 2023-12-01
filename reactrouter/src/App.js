@@ -2,12 +2,21 @@ import Home from './components/Home.js';
 import About from './components/About.js';
 import Product from './components/Product.js';
 import Support from './components/Support.js';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <nav>
+        <ul>
+          <Link to={'/'}>Home</Link>
+          <Link to={'/about'}>About</Link>
+          <Link to={'/support'}>Support</Link>
+          <Link to={'product'}>Product</Link>
+        </ul>
+      </nav>
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
