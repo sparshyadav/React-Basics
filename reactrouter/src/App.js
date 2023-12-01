@@ -1,4 +1,7 @@
-
+import Home from './components/Home.js';
+import About from './components/About.js';
+import Product from './components/Product.js';
+import Support from './components/Support.js';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
@@ -6,10 +9,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<div>This is Home Page</div>} />
-        <Route path='/about' element={<div>This is About Page</div>} />
-        <Route path='/support' element={<div>This is Support Page</div>} />
-        <Route path='/product' element={<div>This is Product Page</div>} />
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/support' element={<Support />} />
+        <Route path='/product' element={<Product />} />
+        <Route path='*' element={<div>Page Not Found</div>} />
       </Routes>
     </div>
   );
